@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Kristi&family=Lobster&family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap');
+
+:root {
+    --head-color: #b0988b;
+    --head-hover-color: #bf4800;
+    --content-color: #656568;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.loader {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    font-size: 45px;
+    color: var(--head-color);
+    font-family: 'Lobster', cursive;
+}
+
+.navbar {
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+
+        li {
+            margin: auto 5px;
+
+            button {
+                padding: 15px 20px;
+                border: none;
+                font-size: 16px;
+                text-transform: uppercase;
+                font-family: 'Bitter', serif;
+            }
+        }
+
+        .current {
+            border-bottom: 1px solid #b0988b;
+        }
+    }
+}
+
+
+.menu {
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .menuImg {
+        margin: 5px;
+
+        .border {
+            margin: 5px;
+            padding: 5px;
+            background: #dad6cf;
+            border: 1px solid #c2b59d;
+            width: 170px;
+            position: relative;
+
+            img {
+                height: 170px;
+                width: 170px;
+            }
+        }
+
+        .rotate {
+            position: absolute;
+            height: 180px;
+            width: 150px;
+            margin: 4px;
+            z-index: -1;
+            transform: rotate(-5deg);
+        }
+    }
+
+    .menuDetail {
+        margin: 15px 5px 5px 5px;
+        width: 250px;
+
+        .menuItem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+
+            h3 {
+                text-transform: capitalize;
+                font-family: 'Bitter', serif;
+                font-weight: bolder;
+                color: var(--head-color);
+            }
+
+            .price {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background-image: url('./images/price.png');
+                background-size: cover;
+                line-height: 40px;
+                padding: 10px;
+                margin: 5px;
+                text-align: center;
+                font-weight: bold;
+                color: white;
+                font-family: 'Bitter', serif;
+                font-size: small;
+            }
+        }
+
+        .detail {
+            color: var(--content-color);
+        }
+
+        &:hover {
+            .menuItem {
+                h3 {
+                    color: var(--head-hover-color);
+                }
+
+                .price {
+                    background-image: url('./images/hoverPrice.png');
+                }
+            }
+        }
+    }
+}
+
+.menuPage {
+    width: 100%;
+    margin: auto;
+
+    .menuContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+// @media only screen and (min-width: 1100px) and (max-width: 1450px) {
+//     .menu {
+
+//         .menuImg {
+//             .border {
+//                 width: 200px;
+
+//                 img {
+//                     width: 200px;
+//                     height: 200px;
+//                 }
+//             }
+
+//             .rotate {
+//                 height: 180px;
+//                 width: 150px;
+//                 margin: 4px;
+//             }
+//         }
+
+//         .menuDetail {
+//             margin: 15px 5px 5px 5px;
+//             width: 275px;
+//         }
+//     }
+// }
+
+// @media only screen and (min-width: 1500px) {
+//     .menu {
+//         .menuImg {
+//             .border {
+//                 width: 285px;
+
+//                 img {
+//                     width: 285px;
+//                     height: 285px;
+//                 }
+//             }
+
+//             .rotate {
+//                 height: 265px;
+//                 width: 235px;
+//                 margin: 4px;
+//             }
+//         }
+
+//         .menuDetail {
+//             margin: 15px 5px 5px 5px;
+//             width: 300px;
+//         }
+//     }
+// }
