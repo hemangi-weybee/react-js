@@ -1,4 +1,6 @@
 import React from 'react';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css'
 
 function Card(props) {
     return (
@@ -12,7 +14,8 @@ function Card(props) {
                 />
             </div>
             <div className="cardName">
-                <h3>{props.name}</h3>
+                <h3 id={props.name}>{props.name}</h3>
+                <Tooltip anchorId={props.name} content={props.name}/>
             </div>
         </div >
     );
