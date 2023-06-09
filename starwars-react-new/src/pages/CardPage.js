@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PaginationControl } from 'react-bootstrap-pagination-control';
 import { connect } from 'react-redux';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 
 import Card from '../component/Card';
 import Header from '../component/Header';
@@ -16,6 +16,7 @@ function CardPage({ fetchData, pageData }) {
     const params = useParams();
     const [searchParam, setSearchParam] = useSearchParams();
     const [page, setPage] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchData(searchParam.get('page'));
@@ -41,9 +42,9 @@ function CardPage({ fetchData, pageData }) {
                                         pageData.data.filter(data => data.page === page).map(data => data.results).flat().map(data => {
                                             const id = Number(data.url.slice(data.url.slice(0, data.url.lastIndexOf('/')).lastIndexOf('/') + 1, data.url.lastIndexOf('/')))
 
-                                            return <Link to={`/${params.type}/${id}`} key={id}>
+                                            return <div onClick={() => navigate(`/${params.type}/${id}`)} key={id}>
                                                 <Card img={`${params.type === 'people' ? 'characters' : params.type}/${id}`} name={data.name ? data.name : data.title} />
-                                            </Link>
+                                            </div>
                                         })
                                     }
                                 </main> <PaginationControl

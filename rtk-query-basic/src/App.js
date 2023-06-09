@@ -4,7 +4,8 @@ import {
   useAddTodoMutation,
   useUpdateTodoMutation,
   useDeleteTodoMutation
-} from './services/todoSlice'
+} from './services/todoSlice';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
   const [updateTodo] = useUpdateTodoMutation();
   const [deleteTodo] = useDeleteTodoMutation();
 
-  // console.log(todos)
+  console.log(todos)
 
   if (isLoading) {
     return (<p> LOADING... </p>)
@@ -63,10 +64,12 @@ function App() {
             ))
           }
         </div>
+        
 
       </div >
     )
   }
+
 }
 
 export default App;
